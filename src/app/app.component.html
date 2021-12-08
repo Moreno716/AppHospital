@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Shippori+Antique+B1&display=swap');
+    #cont{
+        width: 600px;
+        font-family: 'Shippori Antique B1', sans-serif;
+        margin-left: 50px;
+
+    }
+    #letra{
+      font-family: 'Shippori Antique B1', sans-serif;
+    }
+    #izquierda{
+        float: right;
+        font-family: 'Shippori Antique B1', sans-serif;
+        margin-right: 50px;
+        margin-top: -500px;
+        width: 600px;
+        overflow-y: scroll;
+        height: 500px;
+    }
+    #botonEdit{
+      border: none;
+       width: 150px;
+       border-radius: 80px;
+       padding: 3px;
+       font-size: 20px;
+       color: white;
+       background-color:#0805c5 ;
+       font-family: 'Shippori Antique B1', sans-serif;
+       margin-left: 15px;
+       margin-right: 15px;
+    }
+    #botonEdit:hover{
+      background-color:#150281 ; 
+    }
+    #botonDelete{
+      border: none;
+       width: 150px;
+       border-radius: 80px;
+       padding: 3px;
+       font-size: 20px;
+       color: white;
+       background-color:#ec5904 ;
+       font-family: 'Shippori Antique B1', sans-serif;
+    }
+    #botonDelete:hover{
+      background-color:#f7082c ; 
+    }
+
+    
+    #boton{
+       border: none;
+       width: 150px;
+       border-radius: 80px;
+       padding: 3px;
+       font-size: 20px;
+       color: white;
+       background-color:#d61834 ;
+       font-family: 'Shippori Antique B1', sans-serif;
+    }
+    #boton:hover{
+        background-color:#640916 ; 
+    }
+
+    .descargas{
+        border: none;
+      
+       border-radius: 10px;
+       padding: 5px;
+       font-size: 20px;
+       background-color:black;
+    }
+    ::placeholder{
+        font-style: italic;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="https://norfipc.com/img/corazones/corazon-electro.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>My Tab</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Hosp_britanico_logo.svg/2560px-Hosp_britanico_logo.svg.png" style="width: 1000.4px; margin-left: 13%;"> 
+        </div>
+    </header>
+    <section>
+       
+        <main id="cont">
+            <div class="input-group mb-3">
+                <input type="text" [(ngModel)]="selectedPaciente.nombre" class="form-control" placeholder="Paciente*" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">ID</span>
+                <input type="number" [(ngModel)]="selectedPaciente.id" class="form-control" placeholder="ID*" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" [(ngModel)]="selectedPaciente.depar" class="form-control" placeholder="Departamento*" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">Medicamentos</span>
+              <textarea [(ngModel)]="selectedPaciente.medica" class="form-control" aria-label="With textarea"></textarea>
+            </div>
+
+            <p style="font-weight: 900;">Day</p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Mon</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Tue</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                <label class="form-check-label" for="inlineCheckbox3">Wed</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                <label class="form-check-label" for="inlineCheckbox3">Thu</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                <label class="form-check-label" for="inlineCheckbox3">Fri</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                <label class="form-check-label" for="inlineCheckbox3">Sat</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                <label class="form-check-label" for="inlineCheckbox3">Sun</label>
+            </div>
+            <hr>
+            <div class="form-check form-check-inline" style="font-weight: 700;">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                <label class="form-check-label" for="inlineCheckbox3">Morning</label>
+            </div>
+            <div class="form-check form-check-inline" style="font-weight: 700;">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" >
+                <label class="form-check-label" for="inlineCheckbox3">Afternoon</label>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" [(ngModel)]="selectedPaciente.medico" class="form-control" placeholder= "Medico*" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">Sintomas</span>
+              <textarea [(ngModel)]="selectedPaciente.dolec" class="form-control" aria-label="With textarea"></textarea>
+            </div>
+               <br>
+            <button (click)="add()"  id="boton" type="button">Enviar</button>
+            <button (click)="Edit()"  id="botonEdit" *ngIf="selectedPaciente.id !== 0" type="button">Editar</button>
+            <button id="botonDelete"
+            *ngIf="selectedPaciente.id !== 0"
+             (click)="delete()">Delete</button>
+            
+        </main>
+        <main id="izquierda">
+          <h2 style="font-family:'Shippori Antique B1', sans-serif; margin-left: 184px; color: rgb(9, 9, 117);">lista pacientes</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <ul class="list-group">
+                  <li id="letra" style="margin-left: 100px;" *ngFor="let Paciente of pacienteArray"
+                   class="list-group-item list-group-item-action"
+                   (click)="openEdit(Paciente)"
+                   [class.active]="Paciente==selectedPaciente">
+                      ID:{{Paciente.id}}---{{Paciente.nombre}} <br> DEPA:{{Paciente.depar}}--Doctor:{{Paciente.medico}} <br>
+                      Sintomas:{{Paciente.dolec}} <br>
+                      Medicamentos:{{Paciente.medica}}
+
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+        </main>
+        <img src="https://webstockreview.net/images/city-clipart-smart-city-14.png" style=" width: 1349px;height: 100px; margin-top: -10px;" >
+       
+       
+        
+
+    </section>
+   
+
+    
+</body>
+</html>
